@@ -1,0 +1,31 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @timetable.name %>
+</p>
+
+<p>
+  <strong>Start day weekly:</strong>
+  <%= @timetable.start_day_weekly %>
+</p>
+
+<p>
+  <strong>Slot unit size:</strong>
+  <%= @timetable.slot_unit_size %>
+</p>
+
+<p>
+  <strong>Day start time:</strong>
+  <%= @timetable.day_start_time %>
+</p>
+
+<p>
+  <strong>Day end time:</strong>
+  <%= @timetable.day_end_time %>
+</p>
+
+<%= link_to 'Edit', edit_timetable_path(@timetable) %> |
+<%= link_to 'Back', timetables_path %>
+</div>

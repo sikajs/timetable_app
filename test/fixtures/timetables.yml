@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_day_weekly: false
+  slot_unit_size: 1
+  day_start_time: 2013-12-18 16:15:50
+  day_end_time: 2013-12-18 16:15:50
+
+two:
+  name: MyString
+  start_day_weekly: false
+  slot_unit_size: 1
+  day_start_time: 2013-12-18 16:15:50
+  day_end_time: 2013-12-18 16:15:50

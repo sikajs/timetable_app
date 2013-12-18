@@ -1,0 +1,40 @@
+<div class="container">
+<h1>Listing timetables</h1>
+
+<div class="table-responsive">
+<table class="table table-hover ">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Week start from</th>
+      <th>Slot unit size</th>
+      <th>Day start time</th>
+      <th>Day end time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+	  <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timetables.each do |timetable| %>
+      <tr>
+        <td><%= timetable.name %></td>
+        <td><%= timetable.start_day_weekly %></td>
+        <td><%= timetable.slot_unit_size %></td>
+        <td><%= timetable.day_start_time %></td>
+        <td><%= timetable.day_end_time %></td>
+        <td><%= link_to 'Show', timetable , class: "btn btn-info"%></td>
+		<td><%= link_to 'Detail', '#' , class: "btn btn-success"%></td>
+        <td><%= link_to 'Edit', edit_timetable_path(timetable) , class: "btn btn-warning"%></td>
+        <td><%= link_to 'Delete', timetable, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Timetable', new_timetable_path , class: "btn btn-primary"%>
+</div>
