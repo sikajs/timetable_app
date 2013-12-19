@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# limit to 1.9.3 bcoz of windows platform
+ruby '1.9.3'
+#ruby-gemset=timetable_app
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 

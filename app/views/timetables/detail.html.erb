@@ -1,0 +1,27 @@
+<div id="detail" class="container">
+<h1><%= @timetable.name %></h1>
+<% # need to refactor later %>
+<table class="table table-bordered">
+<tr>
+<th></th>
+<% if @timetable.start_day_weekly %>
+	<% (0..6).each do |i| %>
+		<th><%= Date::DAYNAMES[(i+1)%7] %></th>
+	<% end %>
+<% else %>
+	<% (0..6).each do |i| %>
+		<th><%= Date::DAYNAMES[i] %></th>
+	<% end %>
+<% end %>
+</tr>
+<%
+(@timetable.day_start_time.to_s..@timetable.day_end_time.to_s).step(@timetable.slot_unit_size) do |t|
+%>
+<tr><td><%= t %></td>
+<% (0..6).each do |i| %>
+<td></td>
+<% end %>
+</tr>
+<% end %>
+</table>
+</div>

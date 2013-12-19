@@ -26,7 +26,7 @@
         <td><%= timetable.day_start_time %></td>
         <td><%= timetable.day_end_time %></td>
         <td><%= link_to 'Show', timetable , class: "btn btn-info"%></td>
-		<td><%= link_to 'Detail', '#' , class: "btn btn-success"%></td>
+		<td><%= link_to 'Detail', detail_timetable_path(timetable) , class: "btn btn-success"%></td>
         <td><%= link_to 'Edit', edit_timetable_path(timetable) , class: "btn btn-warning"%></td>
         <td><%= link_to 'Delete', timetable, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%></td>
       </tr>

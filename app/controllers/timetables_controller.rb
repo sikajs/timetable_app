@@ -1,5 +1,5 @@
 class TimetablesController < ApplicationController
-  before_action :set_timetable, only: [:show, :edit, :update, :destroy]
+  before_action :set_timetable, only: [:show, :edit, :update, :destroy, :detail]
 
   # GET /timetables
   # GET /timetables.json
@@ -61,6 +61,11 @@ class TimetablesController < ApplicationController
     end
   end
 
+  # GET
+  def detail
+    
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_timetable

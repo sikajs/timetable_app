@@ -1,7 +1,11 @@
 TimetableApp::Application.routes.draw do
   resources :slots
 
-  resources :timetables
+  resources :timetables do
+    member do
+	  get 'detail'
+	end
+  end
 
   root 'timetables#index'
   
