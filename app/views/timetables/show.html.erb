@@ -18,12 +18,12 @@
 
 <p>
   <strong>Day start time:</strong>
-  <%= @timetable.day_start_time %>
+  <%= @timetable.day_start_time.to_s(:time) %>
 </p>
 
 <p>
   <strong>Day end time:</strong>
-  <%= @timetable.day_end_time %>
+  <%= @timetable.day_end_time.to_s(:time) %>
 </p>
 
 <%= link_to 'Edit', edit_timetable_path(@timetable) %> |

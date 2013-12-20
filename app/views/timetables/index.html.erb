@@ -23,8 +23,8 @@
         <td><%= timetable.name %></td>
         <td><%= timetable.start_day_weekly %></td>
         <td><%= timetable.slot_unit_size %></td>
-        <td><%= timetable.day_start_time %></td>
-        <td><%= timetable.day_end_time %></td>
+        <td><%= timetable.day_start_time.to_s(:time) %></td>
+        <td><%= timetable.day_end_time.to_s(:time) %></td>
         <td><%= link_to 'Show', timetable , class: "btn btn-info"%></td>
 		<td><%= link_to 'Detail', detail_timetable_path(timetable) , class: "btn btn-success"%></td>
         <td><%= link_to 'Edit', edit_timetable_path(timetable) , class: "btn btn-warning"%></td>

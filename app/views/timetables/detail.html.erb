@@ -1,6 +1,6 @@
 <div id="detail" class="container">
 <h1><%= @timetable.name %></h1>
-<% # need to refactor later %>
+
 <table class="table table-bordered">
 <tr>
 <th></th>
@@ -14,14 +14,18 @@
 	<% end %>
 <% end %>
 </tr>
-<%
-(@timetable.day_start_time.to_s..@timetable.day_end_time.to_s).step(@timetable.slot_unit_size) do |t|
-%>
-<tr><td><%= t %></td>
-<% (0..6).each do |i| %>
-<td></td>
-<% end %>
-</tr>
+<% $currT = @timetable.day_start_time 
+   $unit = (@timetable.slot_unit_size*60)%>
+<% until ($currT + $unit) > @timetable.day_end_time %>
+  <tr><td><%= $currT.to_s(:time) + ' ~ '%>
+          <%= ($currT + $unit).to_s(:time) %>
+          </td>
+  <% (0..6).each do |i| %>
+    <td></td>
+  <% end %>
+  </tr>
+<% $currT += $unit %>
 <% end %>
 </table>
+<%= link_to 'Back', timetables_path %>
 </div>
