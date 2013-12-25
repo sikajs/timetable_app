@@ -14,7 +14,8 @@ class SlotsController < ApplicationController
 
   # GET /slots/new
   def new
-    @slot = Slot.new
+    @timetable = Timetable.find(session[:current_timetable])
+    @slot = @timetable.slots.build
   end
 
   # GET /slots/1/edit
@@ -24,17 +25,19 @@ class SlotsController < ApplicationController
   # POST /slots
   # POST /slots.json
   def create
-    @slot = Slot.new(slot_params)
-
-    respond_to do |format|
-      if @slot.save
-        format.html { redirect_to @slot, notice: 'Slot was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @slot }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @slot.errors, status: :unprocessable_entity }
+    @timetable = Timetable.find(session[:current_timetable])
+	@slot = @timetable.slots.build(slot_params)
+	
+      respond_to do |format|
+        if @slot.save
+          format.html { redirect_to @slot, notice: 'Slot was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @slot }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @slot.errors, status: :unprocessable_entity }
+      	  end
       end
-    end
+	
   end
 
   # PATCH/PUT /slots/1

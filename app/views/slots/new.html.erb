@@ -1,5 +1,10 @@
+<div class="container">
 <h1>New slot</h1>
-
+<pre>
+<%= @timetable.inspect %>
+<%= @slot.inspect %>
+</pre>
 <%= render 'form' %>
 
-<%= link_to 'Back', slots_path %>
+<%#= link_to 'Back', timetable_path(@timetable) %>
+</div>

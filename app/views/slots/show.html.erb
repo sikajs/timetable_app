@@ -20,5 +20,10 @@
   <%= @slot.end_time %>
 </p>
 
+<p>
+  <strong>Timetable:</strong>
+  <%= @slot.timetable_id %>
+</p>
+
 <%= link_to 'Edit', edit_slot_path(@slot) %> |
 <%= link_to 'Back', slots_path %>

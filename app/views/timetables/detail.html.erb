@@ -1,5 +1,9 @@
 <div id="detail" class="container">
+<p>
 <h1><%= @timetable.name %></h1>
+
+<%= link_to 'Add slot', new_slot_path, class: "btn btn-info pull-right" %>
+</p>
 
 <table class="table table-bordered">
 <tr>

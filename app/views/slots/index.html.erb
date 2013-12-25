@@ -1,15 +1,17 @@
+<div class="container">
 <h1>Listing slots</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
       <th>Description</th>
       <th>Start time</th>
       <th>End time</th>
+      <th>Timetable id</th>
       <th></th>
       <th></th>
-      <th></th>
+	  <th></th>
     </tr>
   </thead>
 
@@ -20,6 +22,7 @@
         <td><%= slot.description %></td>
         <td><%= slot.start_time %></td>
         <td><%= slot.end_time %></td>
+		<td><%= slot.timetable_id %></td>
         <td><%= link_to 'Show', slot %></td>
         <td><%= link_to 'Edit', edit_slot_path(slot) %></td>
         <td><%= link_to 'Destroy', slot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,4 +33,5 @@
 
 <br>
 
-<%= link_to 'New Slot', new_slot_path %>
+<%#= link_to 'New Slot', new_slot_path %>
+</div>

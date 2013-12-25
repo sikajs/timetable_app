@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131218145127) do
+ActiveRecord::Schema.define(version: 20131220073943) do
 
   create_table "slots", force: true do |t|
     t.string   "title"
@@ -20,10 +20,8 @@ ActiveRecord::Schema.define(version: 20131218145127) do
     t.time     "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "timetables_id"
+    t.integer  "timetable_id"
   end
-
-  add_index "slots", ["timetables_id"], name: "index_slots_on_timetables_id"
 
   create_table "timetables", force: true do |t|
     t.string   "name"

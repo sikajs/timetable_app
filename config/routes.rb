@@ -1,11 +1,11 @@
 TimetableApp::Application.routes.draw do
-  resources :slots
-
+  
   resources :timetables do
     member do
 	  get 'detail'
 	end
   end
+  resources :slots
 
   root 'timetables#index'
   
